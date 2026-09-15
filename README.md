@@ -24,8 +24,7 @@ codecraft-site/
 │       └── favicon.svg         → Favicon provisional (punto cian sobre fondo oscuro)
 ├── sitemap.xml
 ├── robots.txt
-└── docs/
-    └── Estado_Proyecto_CodeCraft.docx
+
 ```
 
 Cada página trae un pequeño bloque `<script>window.SITE_CONFIG = {...}</script>` antes de cargar `site.js`, con la configuración propia de esa página (claves de Formspree, Calendly, Google Analytics).
