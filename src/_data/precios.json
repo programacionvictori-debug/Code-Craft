@@ -5,9 +5,9 @@
       {
         "nombre": "Módulo único",
         "desde": "$300",
-        "cotizacion": false,
+        "cotizacion": true,
         "para": "Un proceso puntual (inventario, agenda, facturación)",
-        "destacado": false,
+        "destacado": true,
         "incluye": [
           "1 módulo funcional",
           "Panel de administración básico",
