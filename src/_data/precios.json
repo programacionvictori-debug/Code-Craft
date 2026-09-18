@@ -30,7 +30,7 @@
       },
       {
         "nombre": "A medida",
-        "desde": "",
+        "desde": "230",
         "cotizacion": true,
         "para": "Integraciones externas, apps móviles, alta concurrencia",
         "destacado": false,
