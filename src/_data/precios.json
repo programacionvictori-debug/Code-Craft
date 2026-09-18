@@ -3,7 +3,7 @@
     "nota": "Cada proyecto se cotiza según alcance real; estas son referencias de punto de partida.",
     "paquetes": [
       {
-        "nombre": "Módulo único",
+        "nombre": "Módulo úniceqw",
         "desde": "$300",
         "cotizacion": true,
         "para": "Un proceso puntual (inventario, agenda, facturación)",
@@ -47,7 +47,7 @@
     "paquetes": [
       {
         "nombre": "Landing",
-        "desde": "$XXX",
+        "desde": "$3000",
         "cotizacion": false,
         "para": "Una sola página para presentar un producto o servicio",
         "destacado": false,
