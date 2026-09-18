@@ -1,0 +1,9 @@
+name = "codecraft-cms-auth"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+
+# Los valores reales de estos dos secrets NO van aquí.
+# Se configuran con:
+#   npx wrangler secret put GITHUB_CLIENT_ID
+#   npx wrangler secret put GITHUB_CLIENT_SECRET
+# o desde el dashboard de Cloudflare: Workers → tu Worker → Settings → Variables.

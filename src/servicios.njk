@@ -1,0 +1,168 @@
+---
+layout: base.njk
+title: "Servicios — CodeCraft"
+description: "Creación de sistemas a medida y diseño de páginas web. Alcance, paquetes orientativos y preguntas frecuentes."
+canonicalPath: "/servicios/"
+permalink: "/servicios/"
+activeNav: "servicios"
+schema: '{"@context": "https://schema.org", "@graph": [{"@type": "Service", "serviceType": "Creación de sistemas a medida", "provider": {"@type": "Organization", "name": "CodeCraft"}, "description": "Software de gestión, inventario, facturación y reservas construido a medida del negocio."}, {"@type": "Service", "serviceType": "Diseño y desarrollo de páginas web", "provider": {"@type": "Organization", "name": "CodeCraft"}, "description": "Sitios corporativos, landing pages y tiendas en línea optimizadas para conversión y SEO."}]}'
+---
+<header class="page-hero" id="main">
+  <div class="wrap">
+    <span class="eyebrow">Servicios</span>
+    <h1>Dos formas de resolver el mismo problema: que la tecnología te haga perder menos tiempo.</h1>
+    <p class="sub">Elige el punto de partida que mejor describe lo que necesitas. Si no estás seguro, cuéntanos tu caso y te decimos por dónde empezar.</p>
+  </div>
+</header>
+
+<section class="service-block" id="sistemas" style="border-top:none;">
+  <div class="wrap">
+    <div class="service-block-grid">
+      <div>
+        <span class="service-tag">sistemas</span>
+        <h2>Creación de sistemas a medida</h2>
+        <p class="desc">Software construido alrededor de cómo trabaja tu equipo hoy, no de una plantilla genérica que te obliga a cambiar tus procesos.</p>
+        <div class="stat-row">
+          <div><div class="stat-num">4–10</div><div class="stat-label">semanas por proyecto</div></div>
+          <div><div class="stat-num">100%</div><div class="stat-label">código y datos tuyos</div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-body);font-weight:600;font-size:16px;margin-bottom:4px;">Qué incluye</h3>
+        <ul class="checklist">
+          <li>Levantamiento de procesos actuales y definición de alcance por escrito</li>
+          <li>Diseño de base de datos y arquitectura pensada para crecer</li>
+          <li>Panel de administración con permisos por rol</li>
+          <li>Reportes y exportes (Excel, PDF) a medida de lo que necesitas revisar</li>
+          <li>Migración de datos desde tu sistema actual (hojas de cálculo u otro software)</li>
+          <li>Capacitación al equipo y documentación de uso</li>
+          <li>Periodo de garantía y soporte posterior a la entrega</li>
+        </ul>
+        <h3 style="font-family:var(--font-body);font-weight:600;font-size:16px;margin:24px 0 4px;">Ideal si...</h3>
+        <ul class="checklist">
+          <li>Hoy controlas inventario, ventas o citas en hojas de cálculo o en papel</li>
+          <li>Usas un software genérico y pagas por funciones que no usas</li>
+          <li>Necesitas que dos áreas (ventas, almacén, contabilidad) vean la misma información</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:56px;">
+      <h2 style="font-size:20px;">Paquetes orientativos</h2>
+      <p>{{ precios.sistemas.nota }}</p>
+    </div>
+    <div class="pricing-grid">
+      {% for paquete in precios.sistemas.paquetes %}
+      <div class="price-card{% if paquete.destacado %} featured{% endif %}">
+        <span class="price-name">{{ paquete.nombre }}</span>
+        {% if paquete.cotizacion %}
+        <div class="price-amount">Cotización</div>
+        {% else %}
+        <div class="price-amount">desde <span class="placeholder">{{ paquete.desde }}</span></div>
+        {% endif %}
+        <div class="price-for">{{ paquete.para }}</div>
+        <ul>
+          {% for item in paquete.incluye %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="price-note">Precios orientativos y sujetos a revisión final — reemplazar por tabla de precios real antes de publicar.</p>
+
+    <div class="cta-band" style="margin-top:48px;">
+      <h2>¿Tu operación depende de hojas de cálculo o de memoria?</h2>
+      <div class="cta-band-ctas">
+        <a class="btn btn-primary" href="{{ '/' | url }}#contacto">Cotizar un sistema</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="service-block" id="web">
+  <div class="wrap">
+    <div class="service-block-grid">
+      <div>
+        <span class="service-tag">web</span>
+        <h2>Diseño y desarrollo de páginas web</h2>
+        <p class="desc">Sitios rápidos y bien estructurados, pensados para convertir una visita en un cliente, no solo para verse bien.</p>
+        <div class="stat-row">
+          <div><div class="stat-num">2–6</div><div class="stat-label">semanas por proyecto</div></div>
+          <div><div class="stat-num">&lt;2s</div><div class="stat-label">carga objetivo</div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-body);font-weight:600;font-size:16px;margin-bottom:4px;">Qué incluye</h3>
+        <ul class="checklist">
+          <li>Diseño visual propio, alineado a tu marca (no una plantilla genérica)</li>
+          <li>Desarrollo responsivo, optimizado para móvil</li>
+          <li>SEO técnico y on-page: metadatos, velocidad, estructura semántica</li>
+          <li>Formulario de contacto y/o agenda conectados a servicios reales</li>
+          <li>Capacitación para que edites contenido tú mismo</li>
+          <li>Publicación en dominio y hosting de producción</li>
+        </ul>
+        <h3 style="font-family:var(--font-body);font-weight:600;font-size:16px;margin:24px 0 4px;">Ideal si...</h3>
+        <ul class="checklist">
+          <li>No tienes página web o la actual se ve anticuada o lenta</li>
+          <li>Necesitas vender en línea o recibir reservas/consultas desde el sitio</li>
+          <li>Quieres poder editar textos e imágenes sin depender de un desarrollador</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:56px;">
+      <h2 style="font-size:20px;">Paquetes orientativos</h2>
+      <p>{{ precios.web.nota }}</p>
+    </div>
+    <div class="pricing-grid">
+      {% for paquete in precios.web.paquetes %}
+      <div class="price-card{% if paquete.destacado %} featured{% endif %}">
+        <span class="price-name">{{ paquete.nombre }}</span>
+        {% if paquete.cotizacion %}
+        <div class="price-amount">Cotización</div>
+        {% else %}
+        <div class="price-amount">desde <span class="placeholder">{{ paquete.desde }}</span></div>
+        {% endif %}
+        <div class="price-for">{{ paquete.para }}</div>
+        <ul>
+          {% for item in paquete.incluye %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="price-note">Precios orientativos y sujetos a revisión final — reemplazar por tabla de precios real antes de publicar.</p>
+
+    <div class="cta-band" style="margin-top:48px;">
+      <h2>¿Tu página actual no refleja el nivel de tu trabajo?</h2>
+      <div class="cta-band-ctas">
+        <a class="btn btn-primary" href="{{ '/' | url }}#contacto">Cotizar una web</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Preguntas frecuentes</h2>
+      <p>Lo que más nos preguntan antes de empezar un proyecto, sea sistema o sitio web.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cómo empieza un proyecto?</summary>
+        <p>Con una llamada corta para entender tu operación o tu marca. Después enviamos una propuesta por escrito con alcance, tiempos y costo antes de empezar a construir nada.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si necesito cambios después de la entrega?</summary>
+        <p>Toda entrega incluye un periodo de soporte sin costo adicional. Después de ese periodo, puedes contratar mantenimiento mensual o solicitar cambios puntuales bajo cotización.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El sistema o el sitio quedan a mi nombre?</summary>
+        <p>Sí. El código, el dominio y el hosting se configuran a tu nombre o al de tu empresa; no dependes de nosotros para operar.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo se factura el proyecto?</summary>
+        <p>Normalmente en dos o tres pagos: uno al iniciar, uno o dos durante el desarrollo según avances, y uno final contra entrega.</p>
+      </details>
+    </div>
+  </div>
+</section>

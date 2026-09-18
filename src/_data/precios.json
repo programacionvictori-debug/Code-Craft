@@ -1,0 +1,86 @@
+{
+  "sistemas": {
+    "nota": "Cada proyecto se cotiza según alcance real; estas son referencias de punto de partida.",
+    "paquetes": [
+      {
+        "nombre": "Módulo único",
+        "desde": "$XXX",
+        "cotizacion": false,
+        "para": "Un proceso puntual (inventario, agenda, facturación)",
+        "destacado": false,
+        "incluye": [
+          "1 módulo funcional",
+          "Panel de administración básico",
+          "Hasta 2 roles de usuario",
+          "2 semanas de soporte post-entrega"
+        ]
+      },
+      {
+        "nombre": "Sistema integral",
+        "desde": "$X,XXX",
+        "cotizacion": false,
+        "para": "Varios procesos conectados en un solo sistema",
+        "destacado": true,
+        "incluye": [
+          "Módulos conectados entre sí",
+          "Reportes y exportes a medida",
+          "Roles y permisos avanzados",
+          "1 mes de soporte post-entrega"
+        ]
+      },
+      {
+        "nombre": "A medida",
+        "desde": "",
+        "cotizacion": true,
+        "para": "Integraciones externas, apps móviles, alta concurrencia",
+        "destacado": false,
+        "incluye": [
+          "Arquitectura a medida del caso",
+          "Integraciones con otros sistemas o APIs",
+          "Acuerdo de soporte continuo (SLA)"
+        ]
+      }
+    ]
+  },
+  "web": {
+    "nota": "Cada proyecto se cotiza según número de páginas y funcionalidad; estas son referencias de punto de partida.",
+    "paquetes": [
+      {
+        "nombre": "Landing",
+        "desde": "$XXX",
+        "cotizacion": false,
+        "para": "Una sola página para presentar un producto o servicio",
+        "destacado": false,
+        "incluye": [
+          "1 página, diseño a medida",
+          "Formulario de contacto",
+          "SEO básico"
+        ]
+      },
+      {
+        "nombre": "Sitio corporativo",
+        "desde": "$X,XXX",
+        "cotizacion": false,
+        "para": "Varias páginas: inicio, servicios, nosotros, contacto",
+        "destacado": true,
+        "incluye": [
+          "Hasta 6 páginas",
+          "Formulario + agenda conectados",
+          "SEO técnico completo"
+        ]
+      },
+      {
+        "nombre": "Tienda en línea",
+        "desde": "",
+        "cotizacion": true,
+        "para": "Catálogo, carrito y cobro en línea",
+        "destacado": false,
+        "incluye": [
+          "Catálogo de producto",
+          "Pasarela de pago",
+          "Panel para gestionar pedidos"
+        ]
+      }
+    ]
+  }
+}

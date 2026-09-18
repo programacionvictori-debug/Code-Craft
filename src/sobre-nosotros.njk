@@ -1,0 +1,70 @@
+---
+layout: base.njk
+title: "Nosotros — CodeCraft"
+description: "Conoce al equipo detrás de CodeCraft: cómo pensamos y cómo trabajamos en cada proyecto."
+canonicalPath: "/sobre-nosotros/"
+permalink: "/sobre-nosotros/"
+activeNav: "nosotros"
+---
+<header class="page-hero" id="main">
+  <div class="wrap">
+    <span class="eyebrow">Nosotros</span>
+    <h1>Un mismo equipo detrás de cada sistema y cada sitio que construimos.</h1>
+    <p class="sub">CodeCraft nace de una idea simple: la mayoría de los negocios no necesitan más software genérico, necesitan que alguien entienda su operación antes de escribir una línea de código.</p>
+  </div>
+</header>
+
+<section style="border-top:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Cómo pensamos</h2>
+      <p>Tres ideas que se repiten en cada proyecto, sea un sistema interno o un sitio público.</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <h3>Entender antes de construir</h3>
+        <p>No proponemos una solución hasta entender el proceso real que hay detrás. Un sistema mal entendido cuesta más arreglarlo que hacerlo de nuevo.</p>
+      </div>
+      <div class="value-card">
+        <h3>Alcance claro, sin sorpresas</h3>
+        <p>Tiempos y costo por escrito antes de empezar. Si algo cambia en el camino, se conversa y se cotiza aparte, nunca se asume.</p>
+      </div>
+      <div class="value-card">
+        <h3>Lo que construimos, lo mantenemos</h3>
+        <p>No entregamos y desaparecemos. Cada proyecto incluye acompañamiento después del lanzamiento, y seguimos disponibles para lo que siga creciendo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>El equipo</h2>
+      <p>Un equipo pequeño y directo: quien diseña tu proyecto es quien te acompaña durante todo el proceso.</p>
+    </div>
+    <div class="team-grid">
+      {% for persona in equipo %}
+      <div class="team-card">
+        <div class="team-avatar">{{ persona.iniciales }}</div>
+        <h3>{{ persona.nombre }}</h3>
+        <span class="team-role">{{ persona.rol }}</span>
+        <p>{{ persona.bio }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="price-note">Sección de equipo con contenido de marcador de posición: reemplazar nombres, roles y fotos reales antes de publicar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>¿Quieres contarnos en qué estás trabajando?</h2>
+      <div class="cta-band-ctas">
+        <a class="btn btn-primary" href="{{ '/' | url }}#contacto">Agendar una llamada</a>
+        <a class="btn btn-secondary" href="{{ '/servicios/' | url }}">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>

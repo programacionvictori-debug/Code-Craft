@@ -1,0 +1,24 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="{{ '/' | url }}" class="logo"><img src="{{ '/assets/img/logo-nav.png' | url }}" alt="CodeCraft" class="logo-icon">CodeCraft</a>
+    <div class="nav-links">
+      <a href="{{ '/servicios/' | url }}"{% if activeNav == 'servicios' %} class="active" aria-current="page"{% endif %}>Servicios</a>
+      <a href="{{ '/sobre-nosotros/' | url }}"{% if activeNav == 'nosotros' %} class="active" aria-current="page"{% endif %}>Nosotros</a>
+      <a href="{{ '/' | url }}#proyectos">Proyectos</a>
+      <a href="{{ '/blog/' | url }}"{% if activeNav == 'blog' %} class="active" aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/' | url }}#contacto">Contacto</a>
+    </div>
+    <a class="nav-cta" href="{{ '/' | url }}#contacto">Hablemos</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+      <span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="{{ '/servicios/' | url }}"{% if activeNav == 'servicios' %} class="active" aria-current="page"{% endif %}>Servicios</a>
+    <a href="{{ '/sobre-nosotros/' | url }}"{% if activeNav == 'nosotros' %} class="active" aria-current="page"{% endif %}>Nosotros</a>
+    <a href="{{ '/' | url }}#proyectos">Proyectos</a>
+    <a href="{{ '/blog/' | url }}"{% if activeNav == 'blog' %} class="active" aria-current="page"{% endif %}>Blog</a>
+    <a href="{{ '/' | url }}#contacto">Contacto</a>
+    <a class="nav-cta" href="{{ '/' | url }}#contacto">Hablemos</a>
+  </div>
+</nav>

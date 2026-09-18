@@ -1,0 +1,73 @@
+---
+layout: base.njk
+---
+<header class="page-hero" id="main">
+  <div class="wrap">
+    <a href="{{ '/' | url }}#proyectos" class="breadcrumb">← Volver a proyectos</a>
+    <span class="eyebrow">{{ eyebrow }}</span>
+    <h1>{{ title }}</h1>
+    <p class="sub">{{ summary }}</p>
+    <div class="case-meta-row">
+      <div class="case-meta-item"><div class="case-meta-label">Cliente</div><div class="case-meta-value">{{ client }}</div></div>
+      <div class="case-meta-item"><div class="case-meta-label">Sector</div><div class="case-meta-value">{{ sector }}</div></div>
+      <div class="case-meta-item"><div class="case-meta-label">Stack</div><div class="case-meta-value">{{ stack_label }}</div></div>
+      <div class="case-meta-item"><div class="case-meta-label">Duración</div><div class="case-meta-value">{{ duration }}</div></div>
+    </div>
+    <div class="case-thumb">captura del proyecto — pendiente</div>
+  </div>
+</header>
+
+<section style="border-top:none;">
+  <div class="wrap">
+    <div class="callout" style="margin-top:40px;">
+      <p><strong>Nota interna — no publicar sin revisar.</strong> Este caso de éxito es contenido de muestra para ilustrar cómo se vería la página. Sustitúyelo por los datos, capturas y resultados reales del proyecto antes de publicar el sitio.</p>
+    </div>
+
+    <div class="case-block">
+      <h2>El reto</h2>
+      <p>{{ challenge }}</p>
+    </div>
+
+    <div class="case-block">
+      <h2>La solución</h2>
+      <p>{{ solution }}</p>
+      <ul class="checklist" style="margin-top:20px;max-width:68ch;">
+        {% for item in includes %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h2>Resultados</h2>
+      <div class="case-results">
+        {% for r in results %}
+        <div class="case-result-card">
+          <div class="case-result-num">{{ r.num | safe }}</div>
+          <div class="case-result-label">{{ r.label }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="case-block">
+      <h2>Tecnologías</h2>
+      <div class="tag-row">{% for tag in tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+    </div>
+
+    <div class="cta-band" style="margin-top:64px;">
+      <h2>¿Tienes un proyecto parecido en mente?</h2>
+      <div class="cta-band-ctas">
+        <a class="btn btn-primary" href="{{ '/' | url }}#contacto">Cuéntanos tu caso</a>
+        <a class="btn btn-secondary" href="{{ '/servicios/' | url }}">Ver servicios</a>
+      </div>
+    </div>
+
+    {% set otros = collections.proyectos | rejectattr("data.title", "equalto", title) %}
+    {% if otros.length %}
+    <div class="case-nav">
+      {% for o in otros %}
+      <a href="{{ o.url | url }}">{{ o.data.title }} →</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

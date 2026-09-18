@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: "Página no encontrada — CodeCraft"
+description: "La página que buscas no existe o se movió de lugar."
+canonicalPath: "/404.html"
+permalink: "/404.html"
+noindex: true
+---
+<section class="error-page" style="border-top:none;" id="main">
+  <div class="wrap">
+    <span class="error-code">Error 404</span>
+    <h1>Esta página no existe o se movió de lugar.</h1>
+    <p>Revisa la dirección o vuelve al inicio para encontrar lo que buscas: servicios, proyectos o la forma de contactarnos.</p>
+    <div class="error-actions">
+      <a class="btn btn-primary" href="{{ '/' | url }}">Volver al inicio</a>
+      <a class="btn btn-secondary" href="{{ '/servicios/' | url }}">Ver servicios</a>
+    </div>
+  </div>
+</section>

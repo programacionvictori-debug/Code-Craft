@@ -1,0 +1,48 @@
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="{{ '/assets/img/logo-nav.png' | url }}" alt="CodeCraft" class="logo-icon">CodeCraft</div>
+        <p>Sistemas a medida y desarrollo web, con un mismo estándar de trabajo.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <a href="{{ '/servicios/' | url }}#sistemas">Creación de sistemas</a>
+          <a href="{{ '/servicios/' | url }}#web">Diseño web</a>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <a href="{{ '/sobre-nosotros/' | url }}">Nosotros</a>
+          <a href="{{ '/' | url }}#proceso">Proceso</a>
+          <a href="{{ '/' | url }}#proyectos">Proyectos</a>
+          <a href="{{ '/blog/' | url }}">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="{{ '/legal/aviso-legal/' | url }}">Aviso legal</a>
+          <a href="{{ '/legal/privacidad/' | url }}">Privacidad</a>
+          <a href="{{ '/legal/cookies/' | url }}">Cookies</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ site.year }} CodeCraft</span>
+      <span><a href="{{ '/legal/aviso-legal/' | url }}">Aviso legal</a> · <a href="{{ '/legal/privacidad/' | url }}">Privacidad</a> · <a href="{{ '/legal/cookies/' | url }}">Cookies</a></span>
+    </div>
+  </div>
+</footer>
+<div class="cookie-banner" id="cookieBanner">
+  <p>Usamos cookies de analítica para entender cómo se usa el sitio. Puedes aceptarlas o rechazarlas. <a href="{{ '/legal/cookies/' | url }}">Leer más</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-secondary" id="cookieReject">Rechazar</button>
+    <button type="button" class="btn btn-primary" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+<script src="{{ '/assets/js/site.js' | url }}"></script>
+{% if homeScripts %}<script src="{{ '/assets/js/home.js' | url }}"></script>{% endif %}

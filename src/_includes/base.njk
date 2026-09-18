@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ pageTitle or title }}</title>
+<link rel="icon" type="image/png" href="{{ '/assets/favicon/favicon-32.png' | url }}" sizes="32x32" />
+<link rel="icon" type="image/png" href="{{ '/assets/favicon/favicon-16.png' | url }}" sizes="16x16" />
+<link rel="icon" type="image/png" href="{{ '/assets/favicon/icon-192.png' | url }}" sizes="192x192" />
+<link rel="apple-touch-icon" href="{{ '/assets/favicon/apple-touch-icon.png' | url }}" />
+<link rel="shortcut icon" href="{{ '/assets/favicon/favicon.ico' | url }}" />
+<link rel="canonical" href="{{ site.domain }}{{ canonicalPath | url }}" />
+<meta name="description" content="{{ description }}" />
+{% if noindex %}<meta name="robots" content="noindex,follow" />{% endif %}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="CodeCraft" />
+<meta property="og:title" content="{{ pageTitle or title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:url" content="{{ site.domain }}{{ canonicalPath | url }}" />
+<meta property="og:image" content="{{ site.domain }}{{ '/assets/favicon/og-preview.png' | url }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ pageTitle or title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:image" content="{{ site.domain }}{{ '/assets/favicon/og-preview.png' | url }}" />
+{% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+{% if calendlyWidget %}<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+{% if extraHead %}{{ extraHead | safe }}{% endif %}
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+{% if isHome %}
+<script>window.SITE_CONFIG = {"FORMSPREE_ENDPOINT": "{{ site.formspreeEndpoint }}", "CALENDLY_URL": "{{ site.calendlyUrl }}", "GA4_MEASUREMENT_ID": "{{ site.ga4Id }}"};</script>
+{% else %}
+<script>window.SITE_CONFIG = {"GA4_MEASUREMENT_ID": "{{ site.ga4Id }}"};</script>
+{% endif %}
+{% include "partials/nav.njk" %}
+{{ content | safe }}
+{% include "partials/footer.njk" %}
+</body>
+</html>

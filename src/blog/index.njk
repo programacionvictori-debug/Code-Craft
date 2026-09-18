@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: "Blog — CodeCraft"
+description: "Notas prácticas sobre sistemas a medida, desarrollo web y SEO técnico, escritas por el equipo de CodeCraft."
+canonicalPath: "/blog/"
+permalink: "/blog/"
+activeNav: "blog"
+eleventyExcludeFromCollections: true
+---
+<header class="page-hero" id="main">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>Ideas sobre sistemas a medida y desarrollo web</h1>
+    <p class="sub">Notas prácticas, sin relleno, sobre cuándo conviene construir software a medida y cómo sacarle partido a tu sitio web.</p>
+  </div>
+</header>
+
+<section style="border-top:none;">
+  <div class="wrap">
+    <div class="blog-grid">
+      {% for post in collections.posts %}
+      <a class="blog-card" href="{{ post.url | url }}">
+        <span class="blog-date">{{ post.data.date | readableDate }} · {{ post.data.readingTime or "6 min de lectura" }}</span>
+        <h2>{{ post.data.title }}</h2>
+        <p>{{ post.data.description }}</p>
+        <span class="blog-read-more">Leer artículo →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% if collections.posts.length == 1 %}
+    <p class="blog-empty-note">Estamos empezando el blog — pronto se suman más artículos sobre sistemas, diseño web y SEO técnico.</p>
+    {% endif %}
+  </div>
+</section>

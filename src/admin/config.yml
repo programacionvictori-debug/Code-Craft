@@ -1,0 +1,142 @@
+backend:
+  name: github
+  repo: programacionvictori-debug/Code-Craft   # usuario/nombre-del-repo — ajusta si es distinto
+  branch: main
+  base_url: https://TU-WORKER.workers.dev       # URL del proxy OAuth (paso 2) — reemplazar tras desplegarlo
+  auth_endpoint: auth
+
+# Cada guardado en el panel crea un commit directo a "branch".
+# Si prefieres revisar cambios antes de publicarlos, cambia a:
+# publish_mode: editorial_workflow
+# (esto agrega un flujo de borrador → revisión → publicación, con Pull Requests)
+
+media_folder: "src/assets/img/uploads"
+public_folder: "/Code-Craft/assets/img/uploads"
+
+site_url: https://programacionvictori-debug.github.io/Code-Craft/
+display_url: https://programacionvictori-debug.github.io/Code-Craft/
+logo_url: /Code-Craft/assets/img/logo-nav.png
+
+locale: "es"
+
+collections:
+  # ------------------------------------------------------------------
+  - name: "blog"
+    label: "Blog"
+    label_singular: "Artículo"
+    folder: "src/blog/posts"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción (para SEO y el listado)", name: "description", widget: "text" }
+      - { label: "Fecha de publicación", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Tiempo de lectura", name: "readingTime", widget: "string", default: "6 min de lectura", required: false }
+      - { label: "Tema/categoría", name: "topic", widget: "string", default: "Sistemas", required: false }
+      - { label: "Etiquetas", name: "tags", widget: "list", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  # ------------------------------------------------------------------
+  - name: "proyectos"
+    label: "Proyectos (casos de éxito)"
+    label_singular: "Proyecto"
+    folder: "src/proyectos"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    sortable_fields: ["order", "title"]
+    fields:
+      - { label: "Título", name: "title", widget: "string", hint: "Ej: Sistema de inventario — Textiles del Norte" }
+      - { label: "Etiqueta superior", name: "eyebrow", widget: "string", hint: "Ej: Caso de éxito · Sistemas" }
+      - { label: "Cliente", name: "client", widget: "string" }
+      - { label: "Sector", name: "sector", widget: "string" }
+      - { label: "Stack (texto corto para mostrar)", name: "stack_label", widget: "string", hint: "Ej: Python · PostgreSQL" }
+      - { label: "Duración del proyecto", name: "duration", widget: "string" }
+      - { label: "Resumen (1-2 líneas, se usa también como meta descripción)", name: "summary", widget: "text" }
+      - { label: "El reto", name: "challenge", widget: "text" }
+      - { label: "La solución", name: "solution", widget: "text" }
+      - label: "Qué incluyó"
+        name: "includes"
+        widget: "list"
+        summary: "{{fields.item}}"
+        field: { label: "Punto", name: "item", widget: "string" }
+      - label: "Resultados destacados"
+        name: "results"
+        widget: "list"
+        summary: "{{fields.num}} — {{fields.label}}"
+        fields:
+          - { label: "Número o cifra", name: "num", widget: "string", hint: "Ej: 40%, 3, 24/7" }
+          - { label: "Descripción", name: "label", widget: "string" }
+      - { label: "Tecnologías (etiquetas)", name: "tags", widget: "list" }
+      - { label: "Orden en el portafolio", name: "order", widget: "number", value_type: "int", default: 1 }
+
+  # ------------------------------------------------------------------
+  - name: "precios"
+    label: "Precios"
+    files:
+      - name: "precios"
+        label: "Paquetes y precios"
+        file: "src/_data/precios.json"
+        fields:
+          - label: "Sistemas a medida"
+            name: "sistemas"
+            widget: "object"
+            fields:
+              - { label: "Nota debajo del título", name: "nota", widget: "string" }
+              - label: "Paquetes"
+                name: "paquetes"
+                widget: "list"
+                summary: "{{fields.nombre}}"
+                fields:
+                  - { label: "Nombre del paquete", name: "nombre", widget: "string" }
+                  - { label: "Precio (\"desde\")", name: "desde", widget: "string", required: false, hint: "Déjalo vacío si es 'Cotización'" }
+                  - { label: "¿Es solo por cotización?", name: "cotizacion", widget: "boolean", default: false }
+                  - { label: "Para quién es (1 línea)", name: "para", widget: "string" }
+                  - { label: "¿Destacar este paquete?", name: "destacado", widget: "boolean", default: false }
+                  - label: "Qué incluye"
+                    name: "incluye"
+                    widget: "list"
+                    field: { label: "Punto", name: "item", widget: "string" }
+          - label: "Diseño web"
+            name: "web"
+            widget: "object"
+            fields:
+              - { label: "Nota debajo del título", name: "nota", widget: "string" }
+              - label: "Paquetes"
+                name: "paquetes"
+                widget: "list"
+                summary: "{{fields.nombre}}"
+                fields:
+                  - { label: "Nombre del paquete", name: "nombre", widget: "string" }
+                  - { label: "Precio (\"desde\")", name: "desde", widget: "string", required: false, hint: "Déjalo vacío si es 'Cotización'" }
+                  - { label: "¿Es solo por cotización?", name: "cotizacion", widget: "boolean", default: false }
+                  - { label: "Para quién es (1 línea)", name: "para", widget: "string" }
+                  - { label: "¿Destacar este paquete?", name: "destacado", widget: "boolean", default: false }
+                  - label: "Qué incluye"
+                    name: "incluye"
+                    widget: "list"
+                    field: { label: "Punto", name: "item", widget: "string" }
+
+  # ------------------------------------------------------------------
+  - name: "testimonios"
+    label: "Testimonios"
+    label_singular: "Testimonio"
+    folder: "src/testimonios"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{author}} — {{company}}"
+    sortable_fields: ["order"]
+    fields:
+      - { label: "Cita textual", name: "quote", widget: "text" }
+      - { label: "Nombre de quien lo dice", name: "author", widget: "string" }
+      - { label: "Cargo/rol", name: "role", widget: "string" }
+      - { label: "Empresa", name: "company", widget: "string", required: false }
+      - { label: "Orden", name: "order", widget: "number", value_type: "int", default: 1 }

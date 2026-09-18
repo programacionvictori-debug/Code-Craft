@@ -1,0 +1,43 @@
+---
+layout: base.njk
+activeNav: "blog"
+---
+<header class="article-header" id="main">
+  <div class="wrap">
+    <a href="{{ '/blog/' | url }}" class="breadcrumb">← Volver al blog</a>
+    <div class="article-meta">
+      <span>{{ date | readableDate }}</span>
+      <span class="dot-sep"></span>
+      <span>{{ readingTime or "6 min de lectura" }}</span>
+      {% if topic %}<span class="dot-sep"></span><span>{{ topic }}</span>{% endif %}
+    </div>
+    <h1>{{ title }}</h1>
+    <p class="sub">{{ description }}</p>
+  </div>
+</header>
+
+<section style="border-top:none;">
+  <div class="wrap">
+    <div class="article-content">
+      {{ content | safe }}
+
+      {% if tags.length %}
+      <div class="article-tags">
+        {% for tag in tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="article-author-note">
+        Escrito por el equipo de CodeCraft. ¿Tienes dudas sobre tu caso puntual? <a href="{{ '/' | url }}#contacto" style="color:var(--cyan);">Escríbenos</a>.
+      </div>
+    </div>
+
+    <div class="cta-band" style="margin-top:64px;">
+      <h2>¿Reconociste tu negocio en este artículo?</h2>
+      <div class="cta-band-ctas">
+        <a class="btn btn-primary" href="{{ '/' | url }}#contacto">Cuéntanos tu caso</a>
+        <a class="btn btn-secondary" href="{{ '/servicios/' | url }}#sistemas">Ver alcance y precios</a>
+      </div>
+    </div>
+  </div>
+</section>
