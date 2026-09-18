@@ -4,7 +4,7 @@
     "paquetes": [
       {
         "nombre": "Módulo único",
-        "desde": "$XXX",
+        "desde": "$300",
         "cotizacion": false,
         "para": "Un proceso puntual (inventario, agenda, facturación)",
         "destacado": false,
