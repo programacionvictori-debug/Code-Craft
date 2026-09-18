@@ -2,7 +2,7 @@ backend:
   name: github
   repo: programacionvictori-debug/Code-Craft   # usuario/nombre-del-repo — ajusta si es distinto
   branch: main
-  base_url: https://TU-WORKER.workers.dev       # URL del proxy OAuth (paso 2) — reemplazar tras desplegarlo
+  base_url: https://codecraft-cms-auth.programacionvictori.workers.dev       # URL del proxy OAuth (paso 2) — reemplazar tras desplegarlo
   auth_endpoint: auth
 
 # Cada guardado en el panel crea un commit directo a "branch".
